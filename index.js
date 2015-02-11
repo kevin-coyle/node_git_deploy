@@ -6,7 +6,7 @@ var express = require('express'),
 	config = require('./config.json'),
 	path = config.path;
 
-app.get('/:code', function (req, res) {
+app.post('/:code', function (req, res) {
 	if (req.params.code == config.secure_code) {
 				  var child = exec("cd " + path + ";git pull origin master", function(error, stdout, stderr) {
 				  	sys.print('stdout: ' + stdout);
