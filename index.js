@@ -1,3 +1,8 @@
+var fs = require('fs');
+if (!fs.existsSync('./config.json')) {
+	console.error("No config file found");
+    process.exit(1);
+}
 var express = require('express'),
 	app = express(),
 	sys = require('sys'),
