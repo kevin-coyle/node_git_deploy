@@ -15,8 +15,8 @@ This should be a cross platform tool and has been tested to work in both OS X an
 4. Run `npm install`
 5. Run `node index.js`
 
-
-
-
 ##Notes
 It would be a good idea to use node forever to keep the node server up.
+
+## Roadmap
+- Use nodegit library instead of shell commands
