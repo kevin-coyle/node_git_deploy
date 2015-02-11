@@ -8,7 +8,7 @@ var express = require('express'),
 
 app.post('/:code', function (req, res) {
 	if (req.params.code == config.secure_code) {
-				  var child = exec("cd " + path + ";git pull origin master", function(error, stdout, stderr) {
+				  var child = exec("cd " + path + ";git pull " + config.remote_name + " " + config.branch, function(error, stdout, stderr) {
 				  	sys.print('stdout: ' + stdout);
 			  		sys.print('stderr: ' + stderr);
 			  		if (error !== null) {
@@ -26,7 +26,7 @@ app.post('/:code', function (req, res) {
 	}
 });
 
-var server = app.listen(3080, function () {
+var server = app.listen(config.port, function () {
 
   var host = server.address().address
   var port = server.address().port
