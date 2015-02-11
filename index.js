@@ -3,21 +3,28 @@ var express = require('express'),
 	sys = require('sys'),
 	exec = require('child_process').exec,
 	child,
-	path = '/var/www/',
-	config = require('./config.json');
+	config = require('./config.json'),
+	path = config.path;
 
+app.get('/:code', function (req, res) {
+	if (req.params.code == config.secure_code) {
+				  var child = exec("cd " + path + ";git pull origin master", function(error, stdout, stderr) {
+				  	sys.print('stdout: ' + stdout);
+			  		sys.print('stderr: ' + stderr);
+			  		if (error !== null) {
+			    		console.log('exec error: ' + error);
+			    		res.send(stderr);
+			  		} else {
+			  			res.send(stdout);
+			  		}
+			  		
+				  });
 
-
-app.get('/', function (req, res) {
-	  var child = exec("cd " + path + ";git pull origin master", function(error, stdout, stderr) {
-	  	sys.print('stdout: ' + stdout);
-  		sys.print('stderr: ' + stderr);
-  		if (error !== null) {
-    		console.log('exec error: ' + error);
-  		}
-	  });
-
-})
+				
+	} else {
+		console.log("Invalid code");
+	}
+});
 
 var server = app.listen(3080, function () {
 
