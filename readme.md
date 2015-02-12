@@ -34,17 +34,17 @@ This is the port that node will be listening to for your ghub post request.
 2. Run `npm install`
 3. Deploy and run the application on your server by running either:
 
-`node index.js`
+    `node index.js`
 
-or 
+    or 
 
-`node forever.js` (to deamonize the process with forever)
+    `node forever.js` (to deamonize the process with forever)
 
-_Make sure that the user that runs the node script has permissions to read/write in the deployment directory_
+    _Make sure that the user that runs the node script has permissions to read/write in the deployment directory_
 
 4. Set up your webhook to post to:
 
-http:// _your domain_ : _listen_port_ / _secure_code_
+    http:// _your domain_ : _listen_port_ / _secure_code_
 
 
 ## Roadmap
