@@ -1,3 +1,8 @@
+var fs = require('fs');
+if (!fs.existsSync('./config.json')) {
+	console.error("No config file found");
+    process.exit(1);
+}
 var express = require('express'),
 	app = express(),
 	sys = require('sys'),
@@ -5,6 +10,8 @@ var express = require('express'),
 	child,
 	config = require('./config.json'),
 	path = config.path;
+	origin = config.origin;
+	branch = config.branch;
 	listen_port = config.listen_port;
 
 
@@ -16,7 +23,7 @@ app.post('/:code', function (req, res) {
 	var tasks = [
 		function(){
 			// git pull function
-			//execTask.runner("cd " + path + ";git pull origin master");
+			execTask.runner("cd " + path + ";git pull" + origin + branch);
 		},
 		function(){
 			// register new tasks here. e.g
@@ -51,9 +58,6 @@ app.post('/:code', function (req, res) {
 	}else{
 		res.send("No authentication code send");
 	}
-
-
-});
 
 
 
