@@ -10,7 +10,7 @@ var express = require('express'),
 	child,
 	config = require('./config.json'),
 	path = config.path;
-	origin = config.origin;
+	origin = config.remote_name;
 	branch = config.branch;
 	listen_port = config.listen_port;
 
@@ -19,16 +19,9 @@ var express = require('express'),
 app.post('/:code', function (req, res) {
 
 	// add all tasks to be triggered into the array
-	// below as an anon function.
-	var tasks = [
-		function(){
-			// git pull function
-			execTask("cd " + path + ";git pull " + origin + " " + branch);
-		},
-		function(){
-			// register new tasks here. e.g
-			execTask("cd " + path + ";touch README.md");
-		}
+	var execTaskList = [
+		"cd " + path + ";git pull " + origin + " " + branch,
+		"cd " + path + ";touch README.md"
 	]
 
 	var execTask = function(execArg){
@@ -49,8 +42,8 @@ app.post('/:code', function (req, res) {
 		// if the request is authenticated 
 		if (req.params.code == config.secure_code) {
 			// run the tasks
-			tasks.forEach(function(task) {
-				task();
+			execTaskList.forEach( function(task){
+				execTask(task);
 			});
 		} else {
 			res.send("Invalid authentication code");
