@@ -23,7 +23,7 @@ app.post('/:code', function (req, res) {
 	var tasks = [
 		function(){
 			// git pull function
-			execTask.runner("cd " + path + ";git pull" + origin + branch);
+			execTask("cd " + path + ";git pull " + origin + " " + branch);
 		},
 		function(){
 			// register new tasks here. e.g
