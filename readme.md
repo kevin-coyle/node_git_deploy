@@ -18,12 +18,12 @@ This should be a cross platform tool and has been tested to work in both OS X an
 ## Usage
 1. Edit the config file
 
-```{
+    {
       "path": "/var/www",
       "secure_code": "ajsodiasdasjdiaosdja9349023jdsdjsddsd",
       "listen_port": 3080
     }
-```
+
 
 __path__
 This is the path of your local git repository.
