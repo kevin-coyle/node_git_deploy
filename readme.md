@@ -17,13 +17,13 @@ This should be a cross platform tool and has been tested to work in both OS X an
 
 ## Usage
 1. Edit the config file
-
+```
     {
       "path": "/var/www",
       "secure_code": "ajsodiasdasjdiaosdja9349023jdsdjsddsd",
       "listen_port": 3080
     }
-
+```
 
 __path__
 This is the path of your local git repository.
@@ -45,15 +45,11 @@ or
 3. Set up your webhook to post to:
 
 http:// _your domain_ : _listen_port_ / _secure_code_
-=======
-2. Copy config.json.sample to config.json and fill in the fields
-3. Change the settings in config.json to somethings thats appropriate to your project. Ensure that you put in a unique secure code.
+
+
 4. Run `npm install`
 5. Run `node index.js`
 
-##Notes
-It would be a good idea to use node forever to keep the node server up.
 
 ## Roadmap
-- Use nodegit library instead of shell commands
->>>>>>> 1feb42d62f452d85323d3bc9adb127ce4c96b5fa
+- [ ] Use nodegit library instead of shell commands
