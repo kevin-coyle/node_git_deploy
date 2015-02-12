@@ -58,6 +58,7 @@ app.post('/:code', function (req, res) {
 	}else{
 		res.send("No authentication code send");
 	}
+});
 
 
 
