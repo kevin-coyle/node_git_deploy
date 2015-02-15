@@ -49,3 +49,5 @@ This is the port that node will be listening to for your ghub post request.
 
 ## Roadmap
 - [ ] Use nodegit library instead of shell commands
+- [ ] Add TravisCI 
+- [ ] Add testing
