@@ -1,13 +1,13 @@
 {
   "name": "git_deploy",
-  "version": "0.0.0",
-  "description": "Simple Deployment Mechanism",
+  "version": "0.0.2",
+  "description": "Simple Deployment Mechanism using NodeJS and Express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec ./test/test.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Kevin Coyle And Phil Hauser",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.11.2",
     "forever": "^0.14.1"
