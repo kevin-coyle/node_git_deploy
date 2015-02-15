@@ -4,7 +4,7 @@
   "description": "Simple Deployment Mechanism using NodeJS and Express",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec ./test/test.js"
+    "test": "./node_modules/mocha/bin/mocha -R spec ./test/test.js"
   },
   "author": "Kevin Coyle And Phil Hauser",
   "license": "MIT",
