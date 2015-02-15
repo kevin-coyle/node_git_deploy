@@ -14,17 +14,11 @@ var express = require('express'),
 	branch = config.branch;
 	listen_port = config.listen_port;
 
-
-
-app.post('/:code', function (req, res) {
-
-	// add all tasks to be triggered into the array
-	var execTaskList = [
-		"cd " + path + ";git pull " + origin + " " + branch,
-		"cd " + path + ";touch README.md"
-	]
-
-	var execTask = function(execArg){
+var deployment = {
+	execTaskList : [
+		"cd " + path + ";git pull " + origin + " " + branch
+	],
+	execTask : function(execArg){
 		exec(execArg, function(error, stdout, stderr) {
 			sys.print('stdout: ' + stdout);
 			sys.print('stderr: ' + stderr);
@@ -36,14 +30,16 @@ app.post('/:code', function (req, res) {
 			}
 		});
 	}
+}
 
+app.post('/:code', function (req, res) {
 	// if the request contains a secret code
 	if(req.params.code){
 		// if the request is authenticated 
 		if (req.params.code == config.secure_code) {
 			// run the tasks
-			execTaskList.forEach( function(task){
-				execTask(task);
+			deployment.execTaskList.forEach( function(task){
+				deployment.execTask(task);
 			});
 		} else {
 			res.send("Invalid authentication code");
