@@ -1,6 +1,6 @@
 {
 	"path": "/var/www",
-	"secure_code": "ajsodiasdasjdiaosdja9349023jdsdjsddsd",
+	"secure_code": "CHANGEME",
 	"remote_name": "origin",
 	"branch": "master",
 	"listen_port": 3080
