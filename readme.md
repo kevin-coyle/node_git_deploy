@@ -10,7 +10,7 @@ This should be a cross platform tool and has been tested to work in both OS X an
 - forever (if you want to deamonize the process)
 
 ## Installation and Usage
-1. Edit the config file
+1. Copy the config.json.sample to config.json and edit the config file
 ```
     {
       "path": "/var/www",
