@@ -9,9 +9,6 @@ var express = require('express'),
 	routes = require('./lib/routes')(app,config),
 	listen_port = config.listen_port;
 
-
-
-
 var server = app.listen(listen_port, function () {
 	var host = server.address().address
 	var port = server.address().port
