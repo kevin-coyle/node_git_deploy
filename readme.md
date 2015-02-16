@@ -1,5 +1,6 @@
 #Simple Node Git Deployer
 [![Build Status](https://travis-ci.org/coyledesign/node_git_deploy.svg?branch=develop)](https://travis-ci.org/coyledesign/node_git_deploy)
+
 A very simple node application that responds to a POST request to a given URL and then runs a `git pull` at a configurable directory.
 
 This should be a cross platform tool and has been tested to work in both OS X and Linux (Ubuntu and CentOS).
