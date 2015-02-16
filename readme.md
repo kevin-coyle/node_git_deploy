@@ -43,7 +43,7 @@ This is the port that node will be listening to for your ghub post request.
 
     _Make sure that the user that runs the node script has permissions to read/write in the deployment directory_
 
-4. Set up your webhook to post to:
+4. Set up your webhook to POST to:
 
     http:// _your domain_ : _listen_port_ / _secure_code_
 
