@@ -1,7 +1,13 @@
 var sinon = require('sinon');
 var chai = require('chai');
 var expect = chai.expect;
-var config = require('../config.json');
+var config = {
+    "path": "/tmp/fake",
+    "secure_code": "abc",
+    "remote_name": "origin",
+    "branch": "master",
+    "listen_port": 3080
+};
 
 var deploymentAction = require('../lib/deployment.js').do;
 
