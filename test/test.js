@@ -18,6 +18,19 @@ describe("Routes", function() {
 
             deploymentAction(req, res);
             expect(spy.calledOnce).to.equal(true);
+        });
+        it("should give error when incorrect code", function() {
+            var req,res,spy;
+
+            req = res = {};
+            //set a blank object for the params too;
+            req.params = {};
+            //send an invalid code
+            req.params.code = config.secure_code + "123";
+            spy = res.send = sinon.spy();
+
+            deploymentAction(req, res);
+            expect(spy.calledWith("Invalid authentication code")).to.equal(true);
         })
     });
 });
