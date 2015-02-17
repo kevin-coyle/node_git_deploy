@@ -8,8 +8,9 @@ var config = {
     "branch": "master",
     "listen_port": 3080
 };
+var deployment = require('../lib/deployment')(config);
 
-var deploymentAction = require('../lib/deployment.js').do;
+var deploymentAction = deployment.do;
 
 describe("Routes", function() {
     describe("POST Deployment", function() {
