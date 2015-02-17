@@ -9,10 +9,12 @@
   "author": "Kevin Coyle And Phil Hauser",
   "license": "MIT",
   "dependencies": {
-    "chai": "^2.0.0",
     "express": "^4.11.2",
-    "forever": "^0.14.1",
+    "forever": "^0.14.1"
+  },
+  "devDependencies": {
     "mocha": "^2.1.0",
-    "sinon": "^1.12.2"
+    "sinon": "^1.12.2",
+    "chai": "^2.0.0"
   }
 }
